@@ -1,0 +1,113 @@
+@import '../styles.scss';
+
+.toggle-switch {
+    display: inline-block;
+    position: relative;
+    height: 34px;
+    width: 60px;
+
+    input {
+        opacity: 0;
+        height: 0;
+        width: 0;
+
+        &:checked {
+            &+.toggle-switch-slider {
+                background-color: $celsius;
+
+                &:before {
+                    transform: translateX(26px);
+                }
+            }
+
+            &~.toggle-switch-label {
+                left: 25%;
+            }
+        }
+    }
+
+    .toggle-switch-slider {
+        background-color: $fahrenheit;
+        border-radius: 34px;
+        position: absolute;
+        cursor: pointer;
+        transition: .4s;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+
+        &:before {
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            transition: .4s;
+            height: 26px;
+            content: "";
+            bottom: 4px;
+            width: 26px;
+            left: 4px;
+        }
+    }
+
+    .toggle-switch-label {
+        transform: translate(-50%, -50%);
+        position: absolute;
+        font-size: 14px;
+        cursor: pointer;
+        transition: .4s;
+        color: #fff;
+        left: 75%;
+        top: 50%;
+    }
+}
+
+.same-line {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.input-group {
+    .form-select {
+        width: 0px;
+    }
+
+    input {
+
+        &::-webkit-inner-spin-button,
+        ::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        }
+    }
+
+    *:focus {
+        box-shadow: none;
+
+        &.fahrenheit {
+            border-color: $fahrenheit;
+        }
+    }
+}
+
+/* Laptop */
+@media (min-width: 950px) and (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* Large Tablets */
+@media (max-width: 992px) {
+    .container {
+        max-width: 900px;
+    }
+}
+
+/* Smartphone portrait mode */
+@media (max-width: 480px) {
+    .same-line {
+        flex-direction: column;
+        align-items: start;
+    }
+}

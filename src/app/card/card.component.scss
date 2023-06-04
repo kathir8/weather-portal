@@ -1,0 +1,54 @@
+.day-gradient {
+    background: linear-gradient(to right, #ffffff, #ffecd2);
+
+    img {
+        width: 150px
+    }
+}
+
+.night-gradient {
+    background: linear-gradient(to right, #ffffff, #d2ecff);
+
+    img {
+        width: 100px
+    }
+}
+
+.temp-font {
+    font-size: 20px;
+}
+
+/* Large Tablets */
+@media (max-width: 992px) {
+    .night-gradient {
+        img {
+            width: 75px
+        }
+    }
+}
+
+@media (max-width: 860px) {
+    .temp-font {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 790px) {
+    .temp-font {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 700px) {
+    .day-gradient {
+        img {
+            width: 95px
+        }
+    }
+
+    .night-gradient {
+        img {
+            width: 65px
+        }
+    }
+}

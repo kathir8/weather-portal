@@ -1,0 +1,18 @@
+<div class="card mb-4" [ngClass]="isNight ? 'night-gradient' : 'day-gradient'" style="border-radius: 25px;">
+    <div class="card-body p-4">
+        <div class="d-flex justify-content-between align-items-center pb-2">
+            <div>
+                <div class="temp-font">Min : <strong>{{type ? iterator.min + '°C': (iterator.min | celToFah) +
+                        '°F'}}</strong></div>
+                <div class="temp-font">Max : <strong>{{type ?iterator.max + '°C': (iterator.max | celToFah) +
+                        '°F'}}</strong></div>
+                <p class="text-muted mb-0 mt-2">
+                    <i class="fa fa-map-marker me-1" *ngIf="index === 0"></i>{{iterator.name}}
+                </p>
+            </div>
+            <div>
+                <img src="assets/images/{{ isNight ? 'moon.png' : 'sun.webp' }}">
+            </div>
+        </div>
+    </div>
+</div>
